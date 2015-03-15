@@ -17,5 +17,5 @@ set nu!
 "Some useful maps
 source ~/.vimrc.maps
 
-"Themes
-autocmd BufNewFile,BufRead * AirlineTheme dark
+"Airline Theme
+autocmd VimEnter * AirlineTheme hybrid
