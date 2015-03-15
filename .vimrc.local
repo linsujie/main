@@ -1,2 +1,21 @@
 " This file will be loaded at the end of .vimrc.
 " This file is designed to add your own vim scripts or override the exVim's .vimrc settings.
+
+"change leader
+let mapleader=","
+
+"for tex files
+autocmd BufNewFile,BufRead *.chap setf tex
+autocmd FileType tex source ~/.vimrc.tex
+
+"for Ruby files
+autocmd FileType ruby set foldmethod=syntax
+
+"close the number of lines
+set nu!
+
+"Some useful maps
+source ~/.vimrc.maps
+
+"Themes
+autocmd BufNewFile,BufRead * AirlineTheme dark

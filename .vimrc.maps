@@ -1,0 +1,47 @@
+" annotating codes in c++
+" Ctrl-i 0:    /*     */annotate and unannotate
+vnoremap <C-i>0 da/**/<esc>hhpll
+nmap     <C-i>0 ?\/\*<CR>dw/\*\/<CR>dw
+" Ctrl-i 1:   with line /****** and ******/
+vnoremap <C-i>1 $hda*********************************************************************<CR><CR><esc>0i*********************************************************************<esc>--i/<esc>jj$a/<esc>kP
+nmap     <C-i>1 ?\/\*<CR>dd/\*\/<CR>dd
+" Ctrl-i 2    #************ annotate and unannotate
+vnoremap <C-i>2 $hda#*******************************************************************<CR><CR>#*******************************************************************<esc>^mi-p<C-v>'ikI#<esc>
+nmap     <C-i>2 ?\#\*<CR>j<C-v>NkdnddNdd
+
+" Writing Restructured Text (Sphinx Documentation) {
+" Ctrl-u 1:    underline Parts w/ #'s
+noremap  <C-u>1 yyPVr#yyjp
+inoremap <C-u>1 <esc>yyPVr#yyjpA
+" Ctrl-u 2:    underline Chapters w/ *'s
+noremap  <C-u>2 yyPVr*yyjp
+inoremap <C-u>2 <esc>yyPVr*yyjpA
+" Ctrl-u 3:    underline Section Level 1 w/ ='s
+noremap  <C-u>3 yypVr=
+inoremap <C-u>3 <esc>yypVr=A
+" Ctrl-u 4:    underline Section Level 2 w/ -'s
+noremap  <C-u>4 yypVr-
+inoremap <C-u>4 <esc>yypVr-A
+" Ctrl-u 5:    underline Section Level 3 w/ ^'s
+noremap  <C-u>5 yypVr^
+inoremap <C-u>5 <esc>yypVr^A
+
+nmap <leader>/ :nohl<CR>
+nmap <leader>p :set paste!<BAR>set paste?<CR>
+
+map <leader>g :call IncludeGuard()<CR>
+fun! IncludeGuard()
+   let basename = substitute(bufname(""), '.*/', '', '')
+   let guard = '_' . substitute(toupper(basename), '\.', '_', "H")
+   call append(0, "#ifndef " . guard)
+   call append(1, "#define " . guard)
+   call append( line("$"), "#endif // for #ifndef " . guard)
+endfun
+
+nmap <leader>ds :call DeleteSpace()<CR>
+function DeleteSpace()
+  let line_num = line('.')
+  let col_num = col('.')
+  silent! %s/\s*$//
+  call setpos('.', [0, line_num, col_num, 0])
+endfunction
