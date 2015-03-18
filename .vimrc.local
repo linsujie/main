@@ -19,3 +19,5 @@ source ~/.vimrc.maps
 
 "Airline Theme
 autocmd VimEnter * AirlineTheme hybrid
+autocmd FileType ruby let g:syntastic_ruby_mri_exec = '~/bin/ruby'
+autocmd FileType c,cpp let g:syntastic_cpp_checkers = ['gcc -std=c++0x']
