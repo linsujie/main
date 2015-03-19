@@ -17,6 +17,9 @@ set nu!
 "Some useful maps
 source ~/.vimrc.maps
 
+"set the indent width
+set sw=2
+
 "Airline Theme
 autocmd VimEnter * AirlineTheme hybrid
 autocmd FileType ruby let g:syntastic_ruby_mri_exec = '~/bin/ruby'
