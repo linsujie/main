@@ -4,6 +4,13 @@
 "change leader
 let mapleader=","
 
+"Global values for tex
+let g:Tex_DefaultTargetFormat = 'pdf'
+let g:Tex_FormatDependency_pdf = 'pdf'
+let g:Tex_CompileRule_pdf = 'xelatex $*'
+let g:Tex_MultipleCompileFormats = 'pdf'
+let g:Tex_ViewRule_pdf = 'mupdf-x11 $*.pdf'
+
 "for tex files
 autocmd BufNewFile,BufRead *.chap setf tex
 autocmd FileType tex source ~/.vimrc.tex
