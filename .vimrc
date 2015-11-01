@@ -30,21 +30,21 @@ endif
 " NOTE: this must before filetype off, otherwise it won't work
 set langmenu=none
 
-" use English for anaything in vim-editor.
-if WINDOWS()
-    silent exec 'language english'
-elseif OSX()
-    silent exec 'language en_US'
-else
-    let s:uname = system("uname -s")
-    if s:uname == "Darwin\n"
-        " in mac-terminal
-        silent exec 'language en_US'
-    else
-        " in linux-terminal
-        silent exec 'language en_US.utf8'
-    endif
-endif
+" " use English for anaything in vim-editor.
+" if WINDOWS()
+"     silent exec 'language english'
+" elseif OSX()
+"     silent exec 'language en_US'
+" else
+"     let s:uname = system("uname -s")
+"     if s:uname == "Darwin\n"
+"         " in mac-terminal
+"         silent exec 'language en_US'
+"     else
+"         " in linux-terminal
+"         silent exec 'language en_US.utf8'
+"     endif
+" endif
 
 " try to set encoding to utf-8
 if WINDOWS()
@@ -68,6 +68,7 @@ else
     " set default encoding to utf-8
     set encoding=utf-8
     set termencoding=utf-8
+    set fileencodings=utf-8,ucs-bom,gb2312,default
 endif
 scriptencoding utf-8
 
@@ -195,10 +196,10 @@ if has('gui_running')
     " set guifont
     function! s:set_gui_font()
         if has('gui_gtk2')
-            if getfontname( 'DejaVu Sans Mono for Powerline' ) != ''
+            if getfontname( 'DejaVu Sans Mono' ) != ''
+                set guifont=WenQuanYi\ Zen\ Hei\ Mono\ 12
+            elseif getfontname( 'DejaVu Sans Mono for Powerline' ) != ''
                 set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 12
-            elseif getfontname( 'DejaVu Sans Mono' ) != ''
-                set guifont=DejaVu\ Sans\ Mono\ 12
             else
                 set guifont=Luxi\ Mono\ 12
             endif
