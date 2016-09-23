@@ -68,7 +68,7 @@ else
     " set default encoding to utf-8
     set encoding=utf-8
     set termencoding=utf-8
-    set fileencodings=utf-8,ucs-bom,gb2312,default
+    set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 endif
 scriptencoding utf-8
 
