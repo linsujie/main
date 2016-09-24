@@ -198,7 +198,7 @@ if has('gui_running')
     function! s:set_gui_font()
         if has('gui_gtk2')
             if getfontname( 'DejaVu Sans Mono' ) != ''
-                set guifont=WenQuanYi\ Zen\ Hei\ Mono\ 12
+                set guifont=WenQuanYi\ Zen\ Hei\ Mono\ 13
             elseif getfontname( 'DejaVu Sans Mono for Powerline' ) != ''
                 set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 12
             else
