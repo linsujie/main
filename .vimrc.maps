@@ -29,7 +29,7 @@ inoremap <C-u>5 <esc>yypVr^A
 nmap <leader>/ :nohl<CR>
 nmap <leader>p :set paste!<BAR>set paste?<CR>
 
-map <leader>g :call IncludeGuard()<CR>
+map <leader>gu :call IncludeGuard()<CR>
 fun! IncludeGuard()
    let basename = substitute(bufname(""), '.*/', '', '')
    let guard = '_' . substitute(toupper(basename), '\.', '_', "H")
