@@ -29,6 +29,10 @@ source ~/.vimrc.maps
 "set the indent width
 set sw=2
 
+"for clang-format
+map <leader>cf :ClangFormat<CR>
+let g:clang_format#code_style = 'webkit'
+
 "Airline Theme
 autocmd VimEnter * AirlineTheme hybrid
 autocmd FileType ruby let g:syntastic_ruby_mri_exec = '~/bin/ruby'
