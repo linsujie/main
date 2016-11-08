@@ -58,6 +58,7 @@ Plugin 'groenewege/vim-less'
 Plugin 'wavded/vim-stylus'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'benmills/vimux'
+Plugin 'rhysd/vim-clang-format'
 
 " =======================================================
 

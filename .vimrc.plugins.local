@@ -9,6 +9,7 @@ Plugin 'fcitx.vim'
 Plugin 'vim-rubocop'
 Plugin 'latex-suite'
 Plugin 'benmills/vimux'
+Plugin 'rhysd/vim-clang-format'
 
 " DISABLE: vim-airline makes Vim editing slow when there are too many buffers opened
 "          if you don't mind, and love this plugin, uncomment the script below
